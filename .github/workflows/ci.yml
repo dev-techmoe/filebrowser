@@ -1,0 +1,71 @@
+name: ci
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  
+  build-frontend:
+    name: build-node
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: ./wizard.sh -a
+      - run: rm -rf frontend/node_modules
+      - name: Persisting frontend dist
+        uses: actions/upload-artifact@v1
+        with:
+          name: frontend_dist
+          path: frontend/dist
+
+  build-go:
+    name: build-go
+    runs-on: ubuntu-18.04
+    needs: build-frontend
+    steps:
+      - uses: actions/checkout@v2
+      - name: Preparing go build env
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.12.17'
+      - name: Create frontend dist directory
+        run: mkdir -p frontend/dist
+      - name: Download frontend dist
+        uses: actions/download-artifact@v1
+        with:
+          name: frontend_dist
+          path: frontend/dist
+      - name: Compile Go
+        run: GOOS=linux GOARCH=amd64 ./wizard.sh -c
+      - name: Cleanup
+        run: |
+          git checkout -- go.sum
+      - name: Persisting go dist
+        uses: actions/upload-artifact@v1
+        with:
+          name: go_dist
+          path: .
+  
+  release:
+    name: release
+    runs-on: ubuntu-18.04
+    needs: build-go
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.12.17
+      - name: Download go dist
+        uses: actions/download-artifact@v1
+        with:
+          name: go_dist
+          path: .
+      - name: Run goreleaser
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          version: latest
+          args: release --rm-dist --skip-validate
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
