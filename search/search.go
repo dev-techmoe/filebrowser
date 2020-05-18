@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/filebrowser/filebrowser/v2/rules"
+	"github.com/dev-techmoe/filebrowser/v2/rules"
 	"github.com/spf13/afero"
 )
 

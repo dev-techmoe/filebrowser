@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/filebrowser/filebrowser/v2/storage/bolt/importer"
+	"github.com/dev-techmoe/filebrowser/v2/storage/bolt/importer"
 	"github.com/spf13/cobra"
 )
 
