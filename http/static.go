@@ -19,7 +19,12 @@ import (
 func handleWithStaticData(w http.ResponseWriter, r *http.Request, d *data, box *rice.Box, file, contentType string) (int, error) {
 	w.Header().Set("Content-Type", contentType)
 
-	staticURL := strings.TrimPrefix(d.server.BaseURL+"/static", "/")
+	var staticURL string
+	if d.server.BaseURL != "" {
+		staticURL = "/" + strings.TrimPrefix(d.server.BaseURL, "/") + "/static"
+	} else {
+		staticURL = "/static"
+	}
 
 	auther, err := d.store.Auth.Get(d.settings.AuthMethod)
 	if err != nil {
