@@ -1,4 +1,7 @@
-⚠️ WARN: **This project will not be developed anymore. If you're willing to take over this project, please read [#532](https://github.com/filebrowser/filebrowser/issues/532) for more info and feel free to fork the project!**
+Notice: This project is fork from [https://github.com/filebrowser/filebrowser](filebrowser/filebrowser) and the original author is no longer maintenance this project. Now this repo is maintenance by [@dev-techmoe](https://github.com/dev-techmoe) and it will 
+get necessary security update and some bug fix only, new features will not be added in principle. Feel free to fork this repo and PR is welcome! 
+
+<del>⚠️ WARN: **This project will not be developed anymore. If you're willing to take over this project, please read [#532](https://github.com/filebrowser/filebrowser/issues/532) for more info and feel free to fork the project!**</del>
 
 
 <p align="center">
