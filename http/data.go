@@ -7,10 +7,10 @@ import (
 
 	"github.com/tomasen/realip"
 
-	"github.com/filebrowser/filebrowser/v2/runner"
-	"github.com/filebrowser/filebrowser/v2/settings"
-	"github.com/filebrowser/filebrowser/v2/storage"
-	"github.com/filebrowser/filebrowser/v2/users"
+	"github.com/dev-techmoe/filebrowser/v2/runner"
+	"github.com/dev-techmoe/filebrowser/v2/settings"
+	"github.com/dev-techmoe/filebrowser/v2/storage"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 )
 
 type handleFunc func(w http.ResponseWriter, r *http.Request, d *data) (int, error)

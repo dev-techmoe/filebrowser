@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/dev-techmoe/filebrowser/v2/errors"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/dgrijalva/jwt-go/request"
-	"github.com/filebrowser/filebrowser/v2/errors"
-	"github.com/filebrowser/filebrowser/v2/users"
 )
 
 type userInfo struct {

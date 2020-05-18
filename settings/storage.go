@@ -1,9 +1,9 @@
 package settings
 
 import (
-	"github.com/filebrowser/filebrowser/v2/errors"
-	"github.com/filebrowser/filebrowser/v2/rules"
-	"github.com/filebrowser/filebrowser/v2/users"
+	"github.com/dev-techmoe/filebrowser/v2/errors"
+	"github.com/dev-techmoe/filebrowser/v2/rules"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 )
 
 // StorageBackend is a settings storage backend.

@@ -1,10 +1,10 @@
 package storage
 
 import (
-	"github.com/filebrowser/filebrowser/v2/auth"
-	"github.com/filebrowser/filebrowser/v2/settings"
-	"github.com/filebrowser/filebrowser/v2/share"
-	"github.com/filebrowser/filebrowser/v2/users"
+	"github.com/dev-techmoe/filebrowser/v2/auth"
+	"github.com/dev-techmoe/filebrowser/v2/settings"
+	"github.com/dev-techmoe/filebrowser/v2/share"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 )
 
 // Storage is a storage powered by a Backend whih makes the neccessary

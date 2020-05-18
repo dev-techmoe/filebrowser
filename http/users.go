@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/filebrowser/filebrowser/v2/errors"
-	"github.com/filebrowser/filebrowser/v2/users"
+	"github.com/dev-techmoe/filebrowser/v2/errors"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 	"github.com/gorilla/mux"
 )
 

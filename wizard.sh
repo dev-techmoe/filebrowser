@@ -43,7 +43,7 @@ buildBinary () {
   rice embed-go
 
   cd $REPO
-  go build -a -o filebrowser -ldflags "-s -w -X github.com/filebrowser/filebrowser/v2/version.CommitSHA=$COMMIT_SHA"
+  go build -a -o filebrowser -ldflags "-s -w -X github.com/dev-techmoe/filebrowser/v2/version.CommitSHA=$COMMIT_SHA"
 }
 
 release () {

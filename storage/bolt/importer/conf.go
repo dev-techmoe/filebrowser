@@ -7,12 +7,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/filebrowser/filebrowser/v2/auth"
-	"github.com/filebrowser/filebrowser/v2/users"
+	"github.com/dev-techmoe/filebrowser/v2/auth"
+	"github.com/dev-techmoe/filebrowser/v2/users"
 
 	"github.com/asdine/storm"
-	"github.com/filebrowser/filebrowser/v2/settings"
-	"github.com/filebrowser/filebrowser/v2/storage"
+	"github.com/dev-techmoe/filebrowser/v2/settings"
+	"github.com/dev-techmoe/filebrowser/v2/storage"
 	toml "github.com/pelletier/go-toml"
 	yaml "gopkg.in/yaml.v2"
 )
