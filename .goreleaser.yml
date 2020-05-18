@@ -11,7 +11,7 @@ build:
   env:
     - CGO_ENABLED=0
   ldflags:
-    - -s -w -X github.com/filebrowser/filebrowser/v2/version.Version={{ .Version }} -X github.com/filebrowser/filebrowser/v2/version.CommitSHA={{ .ShortCommit }}
+    - -s -w -X github.com/dev-techmoe/filebrowser/v2/version.Version={{ .Version }} -X github.com/dev-techmoe/filebrowser/v2/version.CommitSHA={{ .ShortCommit }}
   main: main.go
   binary: filebrowser
   goos:
@@ -69,8 +69,8 @@ release:
 #     goarch: amd64
 #     goarm: ''
 #     image_templates:
-#       - "filebrowser/filebrowser:latest"
-#       - "filebrowser/filebrowser:{{ .Tag }}"
-#       - "filebrowser/filebrowser:v{{ .Major }}"
+#       - "dev-techmoe/filebrowser:latest"
+#       - "dev-techmoe/filebrowser:{{ .Tag }}"
+#       - "dev-techmoe/filebrowser:v{{ .Major }}"
 #     extra_files:
 #       - .docker.json
