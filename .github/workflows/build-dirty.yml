@@ -1,0 +1,38 @@
+name: build-dirty
+on: [ push ]
+
+jobs:
+    dirty-build-frontend:
+      name: dirty-build-frontend
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+        - name: Build frontend
+          run: ./wizard.sh -a
+        - name: Persisting frontend dist
+          uses: actions/upload-artifact@v1
+          with:
+            name: frontend_dist
+            path: frontend/dist
+
+    dirty-build-go:
+      name: dirty-build-go
+      runs-on: ubuntu-18.04
+      needs: dirty-build-frontend
+      steps:
+        - uses: actions/checkout@v2
+        - name: Preparing go build env
+          uses: actions/setup-go@v2
+          with:
+            go-version: '1.12.17'
+        - name: Download frontend dist
+          uses: actions/download-artifact@v1
+          with:
+            name: frontend_dist
+            path: frontend/dist
+        - name: Compile Go
+          run: GOOS=linux GOARCH=amd64 ./wizard.sh -c
+        - name: Cleanup
+          run: |
+            git checkout -- go.sum
